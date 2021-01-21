@@ -13,13 +13,22 @@ function jump() {
     let upInterval = setInterval(() => {
         if (position >= 150) {
             clearInterval(upInterval);
-            // Dino desce
+// Dino desce
+            let downInterval = setInterval(() =>{
+                if(position  <= 0) {
+                    clearInterval(downInterval);
+                } else {
+                    position -= 15;
+                    dino.style.bottom = position + 'px';
+                }   
+            }, 15);
+
         } else {
-            // Dino sobe
-            position += 20;
+// Dino sobe
+            position += 15;
             dino.style.bottom = position + 'px';
         }
-    }, 20);
+    }, 15);
 }
 
 document.addEventListener('keyup', handlekeyUp);
