@@ -1,22 +1,22 @@
 body{
-    background: #fafafa;
+    background: #bff8f0;
 
 }
 
 .dino{
-    width: 60px;
-    height: 60px;
-    background-image: url(../img/dino.png);
+    width: 180px;
+    height: 180px;
+    background-image: url(../img/miniPapa.png);
     position: absolute;
-    bottom: 0;
+    bottom: 40;
 }
 
 .cactus{
-    width: 60px;
-    height: 60px;
-    background-image: url(../img/cactus.png);
+    width: 180px;
+    height: 180px;
+    background-image: url(../img/miniCoyo.png);
     position: absolute;
-    bottom: 0;
+    bottom: 40;
 }
 
 .game-over{
@@ -37,9 +37,9 @@ body{
 .background{
     position: absolute;
     bottom: 0;
-    background-image: url(../img/background.png);
+    background-image: url(../img/desert.jpg);
     background-repeat: repeat-x;
     animation: slideright 3000s infinite linear;
     width: 100%;
-    height: 300px;
+    height: 160px;
 }
