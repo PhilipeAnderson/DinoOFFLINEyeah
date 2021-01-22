@@ -1,6 +1,7 @@
 const dino = document.querySelector('.dino');
 const background = document.querySelector('.background');
 let isJumping = false;
+let position = 0;
 
 //Acesse o site keycode.info e descubra o valor de keyCode de cada tecla
 function handlekeyUp(event) {
@@ -12,12 +13,10 @@ function handlekeyUp(event) {
 };
 
 function jump() {
-    let position = 0;
-
     isJumping = true;
 
     let upInterval = setInterval(() => {
-        if (position >= 220) {
+        if (position >= 150) {
             clearInterval(upInterval);
 // Dino desce
             let downInterval = setInterval(() =>{
@@ -25,17 +24,17 @@ function jump() {
                     clearInterval(downInterval);
                     isJumping = false;
                 } else {
-                    position -= 15;
+                    position -= 20;
                     dino.style.bottom = position + 'px';
                 }   
-            }, 15);
+            }, 20);
 
         } else {
 // Dino sobe
-            position += 15;
+            position += 20;
             dino.style.bottom = position + 'px';
         }
-    }, 15);
+    }, 20);
 }
 
 function createCactus(){
@@ -52,6 +51,10 @@ function createCactus(){
         if(cactusPosition < -60){
             clearInterval(leftInterval);
             background.removeChild(cactus)
+        }else if(cactusPosition > 0 && cactusPosition < 60 && position < 60){
+            //Dino Die
+            clearInterval(leftInterval);
+            document.body.innerHTML = '<h1 class="game-over">Fim De Jogo !</h1>'
         }else{
             cactusPosition -= 10;
             cactus.style.left = cactusPosition + 'px';
