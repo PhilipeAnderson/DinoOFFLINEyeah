@@ -1,7 +1,22 @@
+*{
+    margin: 20px;
+    padding: 5px;
+    box-sizing: border-box;
+    background-color: WHITE;
+}
+
 .dino{
     width: 60px;
     height: 60px;
     background: green;
+    position: absolute;
+    bottom: 0;
+}
+
+.cactus{
+    width: 50px;
+    height: 80px;
+    background: red;
     position: absolute;
     bottom: 0;
 }
